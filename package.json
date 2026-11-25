@@ -1,0 +1,39 @@
+{
+	"name": "emdash-import",
+	"version": "0.1.0",
+	"private": true,
+	"description": "Converts a WordPress site into an EmDash site package (.emdash) and imports it through EmDash's site transfer API.",
+	"license": "MIT",
+	"type": "module",
+	"bin": {
+		"emdash-import": "./bin/emdash-import.mjs"
+	},
+	"scripts": {
+		"convert": "tsx src/cli.ts convert",
+		"dev": "wrangler dev",
+		"deploy": "wrangler deploy",
+		"test": "vitest run",
+		"typecheck": "tsc --noEmit"
+	},
+	"engines": {
+		"node": ">=24"
+	},
+	"dependencies": {
+		"@emdash-cms/gutenberg-to-portable-text": "^1.6.0",
+		"@oslojs/crypto": "^1.0.1",
+		"@oslojs/encoding": "^1.1.0",
+		"mime": "^4.1.0",
+		"modern-tar": "^0.7.5",
+		"sax": "^1.4.1",
+		"zod": "4.6.7"
+	},
+	"devDependencies": {
+		"@cloudflare/workers-types": "^5.20261125.1",
+		"@types/node": "^24.0.0",
+		"@types/sax": "^1.2.7",
+		"typescript": "^6.0.3",
+		"vitest": "4.1.10",
+		"wrangler": "^4.125.0",
+		"tsx": "^4.20.0"
+	}
+}
